@@ -26,3 +26,7 @@ div.live-selection {
     z-index: 99998;
     opacity: 0.35;
 }
+
+img#main-image {
+    width: 100%;
+}
