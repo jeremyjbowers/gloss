@@ -1,4 +1,13 @@
 $(function(){
+	
+	
+    anno.setProperties( { 
+    	fill: "rgba(255,255,255,.4)", stroke: "rgba(255,255,255,0)", 
+    	outline: "rgba(255,255,255,0)", outline_width: 10, 
+    	hi_stroke: "rgba(255,255,255,1)" , hi_stroke_width: 8, 
+    	hi_fill: "rgba(0,0,0,1)", 
+    	hi_outline: "rgba(0,0,0,0)", hi_outline_width: 5 }  )  ;
+        	
     var $annotations_list = $('div#annotations-list');
     var $count_target = $('.annotation-count');
     var $main_image = $('#main-image');
