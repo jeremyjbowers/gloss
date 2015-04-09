@@ -4,7 +4,7 @@ $(function(){
     *   and other stuff look really neat.
     */
     anno.setProperties({
-        fill: "rgba(255,255,255,.4)",
+        fill: "rgba(128,128,128,.7)",
         stroke: "rgba(255,255,255,0)",
         outline: "rgba(255,255,255,0)",
         outline_width: 10,
