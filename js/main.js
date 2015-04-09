@@ -94,10 +94,12 @@ $(function(){
             ANNOTATIONS_VISIBLE = false;
             anno.hideAnnotations();
             $toggle_annotations_button.removeClass(visible_class);
+            $toggle_annotations_button.html('Show annotations');
         } else {
             ANNOTATIONS_VISIBLE = true;
             anno.showAnnotations();
             $toggle_annotations_button.addClass(visible_class);
+            $toggle_annotations_button.html('Hide annotations');
         }
         console.log(ANNOTATIONS_VISIBLE);
     }
