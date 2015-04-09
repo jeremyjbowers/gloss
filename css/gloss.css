@@ -1,0 +1,23 @@
+body {
+	padding-top: 50px;
+}
+
+.panel-icon, .panel-votes {
+	margin: 1rem 2rem 2rem 0rem;
+}
+
+.panel-icon {
+	float: left;
+	border: 0.25rem #ccc solid;	 
+}
+
+.panel-votes {
+	float: right;
+}
+
+.panel-icon > p.glyphicon, .panel-votes > p.glyphicon { 
+	margin: 1rem;
+	font-size: 2em;
+	display: block;
+}
+
