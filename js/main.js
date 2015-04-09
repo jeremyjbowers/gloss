@@ -4,6 +4,8 @@ $(function(){
     var $main_image = $('#main-image');
     var $toggle_annotations_button = $('#toggle-annotations');
 
+    var visible_class = 'annotations-visible';
+
     var ANNOTATIONS_VISIBLE = true;
 
     /*
@@ -79,14 +81,14 @@ $(function(){
     *   Handle the global state of the annotation toggle.
     */
     var toggle_annotations = function() {
-        if ($toggle_annotations_button.hasClass('annotations-visible')) {
+        if ($toggle_annotations_button.hasClass(visible_class)) {
             ANNOTATIONS_VISIBLE = false;
             anno.hideAnnotations();
-            $toggle_annotations_button.removeClass('annotations-visible');
+            $toggle_annotations_button.removeClass(visible_class);
         } else {
             ANNOTATIONS_VISIBLE = true;
             anno.showAnnotations();
-            $toggle_annotations_button.addClass('annotations-visible');
+            $toggle_annotations_button.addClass(visible_class);
         }
         console.log(ANNOTATIONS_VISIBLE);
     }
