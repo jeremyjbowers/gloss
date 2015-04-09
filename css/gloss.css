@@ -2,6 +2,15 @@ body {
 	padding-top: 50px;
 }
 
+.navbar-inverse .navbar-brand {
+	color: #ccc;
+	font-size: 24px;
+}
+
+.navbar-inverse .navbar-brand:hover {
+	color: #ddd;
+}
+
 .panel-icon, .panel-votes {
 	margin: 1rem;
 }
@@ -50,4 +59,19 @@ body {
 	color: #99e;
 }
 
+.navbar-inverse {
+	background-color: #fff;
+	border-color: #efefef;
+}
 
+.navbar-inverse .navbar-toggle {
+	border-color: #ccc;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: #ccc;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+	background-color: #fff;
+}
