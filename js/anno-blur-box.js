@@ -89,14 +89,14 @@ annotorious.plugin.BlurBoxSelector.Selector.prototype._attachListeners = functio
       
       var width = right - left;
       var height = bottom - top;
-      self._g2d.strokeStyle = '#000000';
-      self._g2d.fillStyle = 'rgba(0,0,0,0.5)';
+      self._g2d.strokeStyle = '#fff';
+      self._g2d.lineWidth=10;
+      self._g2d.fillStyle='rgba(0,0,0,1)';
       self._g2d.fillRect(0, 0, self._canvas.width, top);
       self._g2d.fillRect(right, top, (self._canvas.width - right), height);
       self._g2d.fillRect(0, bottom, self._canvas.width, (self._canvas.height - bottom));
       self._g2d.fillRect(0, top, left, height);
-      stackBlurCanvasRGBA(self._g2d.canvas,0,0,self._g2d.canvas.width,self._g2d.canvas.height,5)
-      // self._g2d.strokeRect(left + 0.5, top + 0.5, width, height);
+      $(self._g2d.canvas).css("mix-blend-mode","overlay");
     }
   });
 
@@ -222,8 +222,7 @@ annotorious.plugin.BlurBoxSelector.Selector.prototype.drawShape = function(g2d, 
     var geom = shape.geometry;
     g2d.fillStyle = "rgba(255,255,255,1.0)";
     g2d.lineWidth = lineWidth;
-    g2d.fillRect(geom.x, geom.y, geom.width, geom.height); 
-//	stackBlurCanvasRGBA( g2d.canvas, 0, 0, geom.width, geom.height, 5, false );
+    g2d.fillRect(geom.x, geom.y, geom.width, geom.height);  
   }  
   
   
