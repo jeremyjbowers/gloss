@@ -1,12 +1,12 @@
 $(function(){
     var $annotations_list = $('div#annotations-list');
-    var $count_target = $('h1#title small');
+    var $count_target = $('.annotation-count');
     var $main_image = $('#main-image');
     var $toggle_annotations_button = $('#toggle-annotations');
 
     var load_annotations = function(results) {
-        // wipe_old_annotations();
-        // update_results_count(results.length);
+        wipe_old_annotations();
+        update_results_count(results.length);
         for (var i = 0; i < results.length; i++) {
             console.log(results[i]);
             append_annotation(results[i]);
