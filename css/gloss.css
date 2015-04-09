@@ -2,22 +2,86 @@ body {
 	padding-top: 50px;
 }
 
-.panel-icon, .panel-votes {
-	margin: 1rem 2rem 2rem 0rem;
+.navbar-inverse .navbar-brand {
+	color: #ccc;
+	font-size: 24px;
 }
 
-.panel-icon {
+.navbar-inverse .navbar-brand:hover {
+	color: #ddd;
+}
+
+.panel-user, .panel-votes {
+	margin: 1rem;
+}
+
+.panel-user {
 	float: left;
+	margin-right: 2rem;
+}
+
+.panel-user > .user-icon {	
 	border: 0.25rem #ccc solid;	 
+	min-height: 5rem;
+	width: 5rem;
+	margin: 0 auto;
 }
 
 .panel-votes {
 	float: right;
+	margin-left: 2rem;
 }
 
-.panel-icon > p.glyphicon, .panel-votes > p.glyphicon { 
-	margin: 1rem;
+.panel-user > p.glyphicon, .panel-votes > a > p.glyphicon { 
+	padding: 1rem;
 	font-size: 2em;
 	display: block;
 }
 
+.panel-user > .user-name {
+	font-size: 1.0rem;
+	margin: 0.5rem;
+}
+
+.panel-votes > a {
+	color: #999;		
+}
+.panel-votes > a:hover {
+	text-decoration: none;	
+	color: #000;
+}
+
+.gloss-image p.caption, .gloss-image p.credit {
+	font-size: 1.0em;	
+	margin-top: 0.5em;
+	display: inline-block;
+}
+
+.gloss-image p.caption {
+	
+}
+
+.gloss-image p.credit {
+	color: #ccc;
+	display: inline;
+}
+.gloss-image p.credit a {
+	color: #99e;
+}
+
+.navbar-inverse {
+	background-color: #fff;
+	border-color: #efefef;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: #ccc;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: #ccc;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+	background-color: #fff;
+}

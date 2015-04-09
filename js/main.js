@@ -7,8 +7,8 @@ $(function(){
     var $titlesmall = $('h1#title small');
 
     var load_comments = function(results) {
-        wipe_old_comments();
-        update_results_count(results.length);
+        // wipe_old_comments();
+        // update_results_count(results.length);
         for (var i = 0; i < results.length; i++) {
             append_comment(results[i]);
         }
