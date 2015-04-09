@@ -21,3 +21,22 @@ body {
 	display: block;
 }
 
+.gloss-image p.caption, .gloss-image p.credit {
+	font-size: 1.0em;	
+	margin-top: 0.5em;
+	display: inline-block;
+}
+
+.gloss-image p.caption {
+	
+}
+
+.gloss-image p.credit {
+	color: #ccc;
+	display: inline;
+}
+.gloss-image p.credit a {
+	color: #99e;
+}
+
+
