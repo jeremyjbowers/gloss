@@ -126,4 +126,5 @@ body {
 
 canvas.annotorious-item {
 	-webkit-filter: blur(10px);
+	mix-blend-mode: overlay; 
 }
