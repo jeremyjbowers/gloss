@@ -4,6 +4,8 @@ $(function(){
     var $main_image = $('#main-image');
     var $toggle_annotations_button = $('#toggle-annotations');
 
+    var pymChild = new pym.Child();
+
     var load_annotations = function(results) {
         wipe_old_annotations();
         update_results_count(results.length);
@@ -11,6 +13,7 @@ $(function(){
             console.log(results[i]);
             append_annotation(results[i]);
         }
+        pymChild.sendHeight();
     }
 
     var wipe_old_annotations = function() { $annotations_list.html(''); }
@@ -26,14 +29,13 @@ $(function(){
         Parse.initialize("QB0NpFjr42svgfWazPPCcckVRp2pqy9mTZPYAccF", "n4UrEk4qM3czKAAn10n21m0vILckfbWxfVjB9Dma");
         var Annotation = Parse.Object.extend("Annotation");
         var query = new Parse.Query(Annotation);
-        var url = window.location.toString().replace('index.html', '') + $main_image.attr('src');
-
+        var url = 'http://' + window.location.toString().split('/')[2] + '/' + $main_image.attr('src');
+        console.log(url);
         query.equalTo("src", url);
         query.find({
           success: function(results) { load_annotations(results); },
           error: function(error) { console.log("Error: " + error.code + " " + error.message); }
         });
     }
-
     get_annotations();
 })
