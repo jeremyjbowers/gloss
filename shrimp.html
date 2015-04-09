@@ -33,19 +33,14 @@
         <div class="gloss-image jumbotron">
             <div class="clearfix">
                 <div class="annotation-instructions">
-                    <span class="annotation-count">20 annotations</span>
+                    <span class="annotation-count"></span>
                     <span>Tap on a annotation to find out more, or drag to define a new annotation.</span>
                 </div>
-                <div id="toggle-annotations"></div>
+                <div id="toggle-annotations" class="annotations-visible"></div>
             </div>
           <img id="main-image" src="img/sized/Mantis_shrimp_Odontodactylus_scyllarus.jpg" class="annotatable" alt="A mantis shrimp"/>
       <p class="caption">The mantis shrimp can break aquarium glass.</p> <p class="credit">Photograph by <a href="http://www.flickr.com/people/37707866@N00">prilfish on Flickr</a>. Used under CC 2.0/By</p>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="panel panel-default" id="annotations-list"></div>
-      </div>
-
-    </div>
+      <div class="panel panel-default"><div class="panel-body" id="annotations-list"></div></div>
 </div>
     </div>
     </div><!-- /.container -->
@@ -58,9 +53,9 @@
         <script src="js/anno-parse-plugin.js"></script>
         <script src="js/anno-blur-box.js"></script>
         <script>
-        	anno.addPlugin('BlurBoxSelector', { activate: true }); 
-		</script>
-         <script>anno.addPlugin('Parse', { app_id: 'QB0NpFjr42svgfWazPPCcckVRp2pqy9mTZPYAccF', js_key: 'n4UrEk4qM3czKAAn10n21m0vILckfbWxfVjB9Dma' });</script>
+        	anno.addPlugin('BlurBoxSelector', { activate: true });
+        </script>
+        <script>anno.addPlugin('Parse', { app_id: 'QB0NpFjr42svgfWazPPCcckVRp2pqy9mTZPYAccF', js_key: 'n4UrEk4qM3czKAAn10n21m0vILckfbWxfVjB9Dma' });</script>
         <script src="js/uuid.js"></script>
         <script src="js/pym.min.js"></script>
         <script src="js/main.js"></script>

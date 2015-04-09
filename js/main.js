@@ -13,38 +13,102 @@ $(function(){
     var $main_image = $('#main-image');
     var $toggle_annotations_button = $('#toggle-annotations');
 
+    var visible_class = 'annotations-visible';
+
+    var ANNOTATIONS_VISIBLE = true;
+
+    /*
+    *   Initializes the Pym child element
+    *   but does not send height. We'll do
+    *   that later when the Ajax is complete.
+    */
     var pymChild = new pym.Child();
 
+
+    /*
+    *   Called when the Parse backend query finishes
+    *   successfully. Removes old annotations and adds
+    *   all of the ones we know about.
+    */
     var load_annotations = function(results) {
-        wipe_old_annotations();
-        update_results_count(results.length);
-        for (var i = 0; i < results.length; i++) {
-            console.log(results[i]);
-            append_annotation(results[i]);
-        }
+        $annotations_list.html('');
+        $count_target.html(results.length +' annotations');
+        for (var i = 0; i < results.length; i++) { append_annotation(results[i]); }
+
+        /*
+        *   Once the annotations have been loaded,
+        *   send the height back out to the parent.
+        */
         pymChild.sendHeight();
     }
 
-    var wipe_old_annotations = function() { $annotations_list.html(''); }
-
+    /*
+    *   Handles templating the annotation HTML.
+    *   I am a bad person.
+    */
     var append_annotation = function(annotation) {
         var annotation_html = '<div id="'+annotation.id+'" class="panel panel-default"><div class="panel-body"><div class="panel-icon"><p class="glyphicon glyphicon-user"></p></div><div class="panel-votes"><p class="glyphicon glyphicon-thumbs-up">&nbsp;</p><p class="glyphicon glyphicon-thumbs-down">&nbsp;</p></div><p>'+annotation.get("text")+'</p></div></div>';
         $annotations_list.append(annotation_html);
     }
 
-    var update_results_count = function(results_count) { $count_target.html(results_count+' annotations'); }
-
+    /*
+    *   Centrally responsible for getting annotations and
+    *   calling functions to place them on the page.
+    */
     var get_annotations = function () {
+
+        /*
+        *   Set up Parse, our persistence backend.
+        */
         Parse.initialize("QB0NpFjr42svgfWazPPCcckVRp2pqy9mTZPYAccF", "n4UrEk4qM3czKAAn10n21m0vILckfbWxfVjB9Dma");
         var Annotation = Parse.Object.extend("Annotation");
         var query = new Parse.Query(Annotation);
+
+        /*
+        *   Our annotation plugin saves annotations based on the
+        *   perceived URL path to the image, e.g., localhost/path/to/img.jpg
+        *   This is actually different in development if developers serve
+        *   the pages via file:// or http://127.0.0.1/ or some such.
+        */
         var url = 'http://' + window.location.toString().split('/')[2] + '/' + $main_image.attr('src');
-        console.log(url);
+
+        /*
+        *   Query to get all the annotations that will show up on the image.
+        */
         query.equalTo("src", url);
+
+        /*
+        *   Do the  query asynchronously and load the annotations on success.
+        */
         query.find({
           success: function(results) { load_annotations(results); },
           error: function(error) { console.log("Error: " + error.code + " " + error.message); }
         });
     }
+
+    /*
+    *   Handle the global state of the annotation toggle.
+    */
+    var toggle_annotations = function() {
+        if ($toggle_annotations_button.hasClass(visible_class)) {
+            ANNOTATIONS_VISIBLE = false;
+            anno.hideAnnotations();
+            $toggle_annotations_button.removeClass(visible_class);
+        } else {
+            ANNOTATIONS_VISIBLE = true;
+            anno.showAnnotations();
+            $toggle_annotations_button.addClass(visible_class);
+        }
+        console.log(ANNOTATIONS_VISIBLE);
+    }
+
+    /*
+    *   Event handler for toggling the annotations on and off.
+    */
+    $toggle_annotations_button.on('click', toggle_annotations);
+
+    /*
+    *   Get the annotations on initial load.
+    */
     get_annotations();
 })
