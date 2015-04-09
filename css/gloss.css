@@ -122,3 +122,8 @@ body {
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
 	background-color: #fff;
 }
+
+
+canvas.annotorious-item {
+	-webkit-filter: blur(10px);
+}

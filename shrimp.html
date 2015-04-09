@@ -92,8 +92,10 @@
         <script src="js/annotorious.min.js"></script>
         <script src="js/anno-parse-plugin.js"></script>
         <script src="js/anno-blur-box.js"></script>
-        <script>      anno.addPlugin('BlurBoxSelector', { activate: true });
-</script>
+        <script>
+        	anno.addPlugin('BlurBoxSelector', { activate: true });
+        	anno.setProperties( { fill: "rgba(255,255,255,0.2)", outline: "rgba(0,0,0,0.5)", hi_stroke: "rgba(255,0,0,0)" } )  ;
+		</script>
 
         <script>anno.addPlugin('Parse', { app_id: 'QB0NpFjr42svgfWazPPCcckVRp2pqy9mTZPYAccF', js_key: 'n4UrEk4qM3czKAAn10n21m0vILckfbWxfVjB9Dma' });</script>
 

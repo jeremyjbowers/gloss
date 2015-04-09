@@ -175,7 +175,7 @@ annotorious.plugin.BlurBoxSelector.Selector.prototype.getShape = function() {
     var viewportBounds = this.getViewportBounds();
     var item_anchor = this._annotator.toItemCoordinates({x: viewportBounds.left, y: viewportBounds.top});
     var item_opposite = this._annotator.toItemCoordinates({x: viewportBounds.right - 1, y: viewportBounds.bottom - 1});
-
+	
     return { type: 'rect', geometry: { x: item_anchor.x, y: item_anchor.y, width: item_opposite.x - item_anchor.x, height: item_opposite.y - item_anchor.y } };
   } else {
     return undefined;
@@ -213,17 +213,17 @@ annotorious.plugin.BlurBoxSelector.Selector.prototype.drawShape = function(g2d, 
     var color, lineWidth;
     if (highlight) {
       color = '#ff0000';
-      lineWidth = 1.2;
+      lineWidth = 3;
     } else {
       color = '#ffffff';
-      lineWidth = 1;
+      lineWidth = 3;
     }
 
     var geom = shape.geometry;
     g2d.fillStyle = "rgba(255,255,255,1.0)";
     g2d.lineWidth = lineWidth;
     g2d.fillRect(geom.x, geom.y, geom.width, geom.height); 
-	stackBlurCanvasRGBA( g2d.canvas, 0, 0, geom.width, geom.height, 5, false );
+//	stackBlurCanvasRGBA( g2d.canvas, 0, 0, geom.width, geom.height, 5, false );
   }  
   
   
