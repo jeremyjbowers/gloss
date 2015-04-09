@@ -3,22 +3,33 @@ body {
 }
 
 .panel-icon, .panel-votes {
-	margin: 1rem 2rem 2rem 0rem;
+	margin: 1rem;
 }
 
 .panel-icon {
 	float: left;
 	border: 0.25rem #ccc solid;	 
+	margin-right: 2rem;
 }
 
 .panel-votes {
 	float: right;
+	margin-left: 2rem;
 }
 
-.panel-icon > p.glyphicon, .panel-votes > p.glyphicon { 
-	margin: 1rem;
+.panel-icon > p.glyphicon, .panel-votes > a > p.glyphicon { 
+	padding: 1rem;
 	font-size: 2em;
 	display: block;
+	margin: 0;
+}
+
+.panel-votes > a {
+	color: #999;		
+}
+.panel-votes > a:hover {
+	text-decoration: none;	
+	color: #000;
 }
 
 .gloss-image p.caption, .gloss-image p.credit {
