@@ -4,6 +4,8 @@ $(function(){
     var $main_image = $('#main-image');
     var $toggle_annotations_button = $('#toggle-annotations');
 
+    var pymChild = new pym.Child();
+
     var load_annotations = function(results) {
         wipe_old_annotations();
         update_results_count(results.length);
@@ -36,5 +38,4 @@ $(function(){
         });
     }
     get_annotations();
-    var pymChild = new pym.Child();
 })
