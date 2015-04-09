@@ -43,6 +43,10 @@ body {
 	background-size: 100%;
 	margin-bottom: 15px;
 }
+#toggle-annotations.annotations-visible {
+  mix-blend-mode: multiply;
+}
+
 
 .jumbotron {
 	padding: 20px;
