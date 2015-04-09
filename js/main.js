@@ -28,7 +28,9 @@ $(function(){
     *   but does not send height. We'll do
     *   that later when the Ajax is complete.
     */
-    var pymChild = new pym.Child();
+    try {
+	    var pymChild = new pym.Child();
+    } catch (err) {}
 
     /*
     *   Called when the Parse backend query finishes
@@ -46,7 +48,9 @@ $(function(){
         *   Once the annotations have been loaded,
         *   send the height back out to the parent.
         */
-        pymChild.sendHeight();
+        try {
+        	pymChild.sendHeight();
+        } catch (err) {}
     }
 
     /*
