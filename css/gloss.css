@@ -11,6 +11,18 @@ body {
 	color: #ddd;
 }
 
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+	color: #ccc;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+	background-color: lightblue;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	border-color: #efefef;
+}
+
 .annotation-instructions {
 	margin-bottom: 15px;
 	width: calc(100% - 60px);
