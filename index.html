@@ -61,8 +61,7 @@
 			<p class="caption">The mantis shrimp can break aquarium glass.</p> <p class="credit">Photograph by <a href="http://www.flickr.com/people/37707866@N00">prilfish on Flickr</a>. Used under CC 2.0/By</p>
 			<div class="alert alert-info alert-dismissible" role="alert">Tap on a detail to find out more, or drag to define a new detail.</div>
 			<div class="panel panel-default">
-			  <div class="panel-body">
-			    <div class="panel panel-default" id="#comments-list"></div>
+			  <div class="panel-body" id="annotations-list"></div>
 			</div>
 
 		</div>
@@ -87,13 +86,13 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="http://www.parsecdn.com/js/parse-1.2.8.min.js"></script>
         <script src="js/annotorious.min.js"></script>
-        <script src="js/anno-parse-plugin.js"></script>
-        <script src="js/anno-blur-box.js"></script>
-        <script>      anno.addPlugin('BlurBoxSelector', { activate: true });
-</script>
 
+        <script src="js/anno-blur-box.js"></script>
+        <script>anno.addPlugin('BlurBoxSelector', { activate: true });</script>
+
+        <script src="http://www.parsecdn.com/js/parse-1.2.8.min.js"></script>
+        <script src="js/anno-parse-plugin.js"></script>
         <script>anno.addPlugin('Parse', { app_id: 'QB0NpFjr42svgfWazPPCcckVRp2pqy9mTZPYAccF', js_key: 'n4UrEk4qM3czKAAn10n21m0vILckfbWxfVjB9Dma' });</script>
 
         <script src="js/uuid.js"></script>
