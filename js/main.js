@@ -3,7 +3,7 @@ $(function(){
     var Annotation = Parse.Object.extend("Annotation");
     var query = new Parse.Query(Annotation);
 
-    var $comments = $('div#comments-body');
+    var $comments = $('div#comments-list');
     var $titlesmall = $('h1#title small');
 
     var load_comments = function(results) {
