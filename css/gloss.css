@@ -73,6 +73,7 @@ body {
 .panel-votes {
 	float: right;
 	margin-left: 2rem;
+	width: 5rem;
 }
 
 .panel-user > p.glyphicon, .panel-votes > a > p.glyphicon { 
