@@ -19,7 +19,6 @@ $(function(){
     var $count_target = $('.annotation-count');
     var $main_image = $('#main-image');
     var $toggle_annotations_button = $('#toggle-annotations');
-
     var visible_class = 'annotations-visible';
 
     var ANNOTATIONS_VISIBLE = true;
@@ -31,13 +30,14 @@ $(function(){
     */
     var pymChild = new pym.Child();
 
-
     /*
     *   Called when the Parse backend query finishes
     *   successfully. Removes old annotations and adds
     *   all of the ones we know about.
     */
     var load_annotations = function(results) {
+        results = results.reverse();
+
         $annotations_list.html('');
         $count_target.html(results.length +' annotations');
         for (var i = 0; i < results.length; i++) { append_annotation(results[i]); }
