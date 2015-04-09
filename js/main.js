@@ -77,7 +77,8 @@ $(function(){
         *   This is actually different in development if developers serve
         *   the pages via file:// or http://127.0.0.1/ or some such.
         */
-        var url = 'http://' + window.location.toString().split('/')[2] + '/' + $main_image.attr('src');
+        var protocol = window.location.toString().split(':')[0]
+        var url = protocol + '://' + window.location.toString().split('/')[2] + '/' + $main_image.attr('src');
 
         /*
         *   Query to get all the annotations that will show up on the image.
