@@ -58,7 +58,7 @@ $(function(){
     *   I am a bad person.
     */
     var append_annotation = function(annotation) {
-        var annotation_html = '<div id="'+annotation.id+'" class="panel panel-default"><div class="panel-body"><div class="panel-user"><p class="glyphicon glyphicon-user user-icon">&nbsp;</p><p class="user-name">Anonymous</p></div><div class="panel-votes"><p class="glyphicon glyphicon-pushpin">&nbsp;<p class="glyphicon glyphicon-thumbs-up">&nbsp;</p><p class="glyphicon glyphicon-thumbs-down">&nbsp;</p></div><p>'+annotation.get("text")+'</p></div></div>';
+        var annotation_html = '<div id="'+annotation.id+'" class="panel panel-default"><div class="panel-body"><div class="panel-user"><p class="glyphicon glyphicon-user user-icon">&nbsp;</p><p class="user-name">Anonymous</p></div><div class="panel-votes"><a href="#" class="button-pin"><p class="glyphicon glyphicon-pushpin">&nbsp;</p></a><a href="#" class="button-pin"><a href="#" class="button-pin"><p class="glyphicon glyphicon-thumbs-up">&nbsp;</p></a><a href="#" class="button-pin"><p class="glyphicon glyphicon-thumbs-down">&nbsp;</p></a></div><p>'+annotation.get("text")+'</p></div></div>';
         $annotations_list.append(annotation_html);
     }
 
