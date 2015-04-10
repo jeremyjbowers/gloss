@@ -51,6 +51,14 @@ $(function(){
         try {
         	pymChild.sendHeight();
         } catch (err) {}
+        
+        
+	    /* 
+	    * For the purpose of our demo, let's ignore clicks on the vote buttons.
+	    */ 
+	    
+	    $(".panel-votes a").click(function(){return false;});
+	    
     }
 
     /*
@@ -58,8 +66,9 @@ $(function(){
     *   I am a bad person.
     */
     var append_annotation = function(annotation) {
-        var annotation_html = '<div id="'+annotation.id+'" class="panel panel-default"><div class="panel-body"><div class="panel-user"><p class="glyphicon glyphicon-user user-icon">&nbsp;</p><p class="user-name">Anonymous</p></div><div class="panel-votes"><a href="#" class="button-pin"><p class="glyphicon glyphicon-pushpin">&nbsp;</p></a><a href="#" class="button-pin"><a href="#" class="button-pin"><p class="glyphicon glyphicon-thumbs-up">&nbsp;</p></a><a href="#" class="button-pin"><p class="glyphicon glyphicon-thumbs-down">&nbsp;</p></a></div><p>'+annotation.get("text")+'</p></div></div>';
+        var annotation_html = '<div id="'+annotation.id+'" class="panel panel-default"><div class="panel-body"><div class="panel-user"><p class="glyphicon glyphicon-user user-icon">&nbsp;</p><p class="user-name">Anonymous</p></div><div class="panel-votes"><a href="#" class="button-pin"><p class="glyphicon glyphicon-pushpin">&nbsp;</p></a><a href="#" class="button-pin"><a href="#" class="button-pin"><p class="glyphicon glyphicon-thumbs-up">&nbsp;</p></a><a href="#" class="button-pin"><p class="glyphicon glyphicon-thumbs-down">&nbsp;</p></a></div><div class="user-comment"><p>'+annotation.get("text")+'</p></div></div></div>';
         $annotations_list.append(annotation_html);
+        
     }
 
     /*
@@ -125,4 +134,7 @@ $(function(){
     *   Get the annotations on initial load.
     */
     get_annotations();
+    
+    
+    
 })

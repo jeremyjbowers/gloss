@@ -70,6 +70,10 @@ body {
 	margin: 0 auto;
 }
 
+.user-comment {
+	margin-top: .6rem;
+}
+
 .panel-votes {
 	float: right;
 	margin-left: 2rem;
@@ -77,7 +81,7 @@ body {
 }
 
 .panel-user > p.glyphicon, .panel-votes > a > p.glyphicon { 
-	font-size: 2em;
+	font-size: 1.5em;
 	display: block;
 }
 
@@ -86,6 +90,7 @@ p.glyphicon {
 }
 .panel-user > p.glyphicon {
 	padding: 1rem;		
+	font-size: 2em;
 }
 
 .panel-user > .user-name {
@@ -94,6 +99,7 @@ p.glyphicon {
 }
 
 .panel-votes > a {
+	text-decoration: none;	
 	color: #999;		
 }
 .panel-votes > a:hover {
