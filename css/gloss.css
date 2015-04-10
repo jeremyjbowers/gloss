@@ -77,9 +77,15 @@ body {
 }
 
 .panel-user > p.glyphicon, .panel-votes > a > p.glyphicon { 
-	padding: 1rem;
 	font-size: 2em;
 	display: block;
+}
+
+p.glyphicon {
+	padding: .3rem;	
+}
+.panel-user > p.glyphicon {
+	padding: 1rem;		
 }
 
 .panel-user > .user-name {
